@@ -2,17 +2,18 @@
   "name": "mytheme",
   "version": "1.0.0",
   "scripts": {
-    "css": "sass scss/main.scss assets/dist/main.css",
-    "css:watch": "sass --watch scss:assets/dist",
-
-    "js": "esbuild assets/js/main.js --bundle --outfile=assets/dist/main.js",
-    "js:watch": "esbuild assets/js/main.js --bundle --watch --outfile=assets/dist/main.js",
-
+    "css": "sass scss/main.scss assets/dist/main.css && sass --load-path=node_modules blocks:blocks",
+    "css:watch": "sass --watch scss:assets/dist blocks:blocks",
+    "js": "esbuild assets/js/main.js --bundle --outfile=assets/dist/main.js && esbuild blocks/slider/script.src.js --bundle --outfile=blocks/slider/script.js",
+    "js:watch": "esbuild assets/js/main.js --bundle --outfile=assets/dist/main.js --watch & esbuild blocks/slider/script.src.js --bundle --outfile=blocks/slider/script.js --watch",
     "dev": "npm run css:watch & npm run js:watch",
     "build": "npm run css && npm run js"
   },
   "devDependencies": {
-    "sass": "^1.69.0",
-    "esbuild": "^0.20.0"
+    "esbuild": "^0.20.0",
+    "sass": "^1.69.0"
+  },
+  "dependencies": {
+    "swiper": "^12.1.2"
   }
 }
