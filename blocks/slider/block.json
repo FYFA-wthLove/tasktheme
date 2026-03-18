@@ -1,0 +1,33 @@
+{
+  "name": "acf/slider",
+  "title": "Slider Block",
+  "description": "Slider block using Swiper.js with lazy loading",
+  "category": "layout",
+  "icon": "images-alt2",
+  "keywords": [
+    "slider",
+    "carousel",
+    "swiper"
+  ],
+  "acf": {
+    "mode": "preview",
+    "renderTemplate": "render.php"
+  },
+  "supports": {
+    "align": [
+      "full"
+    ]
+  },
+  "style": [
+    "file:./style.css"
+  ],
+  "editorStyle": [
+    "file:./style.css"
+  ],
+  "script": [
+    "file:./script.js"
+  ],
+  "editorScript": [
+    "file:./script.js"
+  ]
+}

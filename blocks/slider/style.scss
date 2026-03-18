@@ -1,0 +1,36 @@
+.slider-block {
+	position: relative;
+	width: 100%;
+
+	.swiper-slide {
+		text-align: center;
+		font-size: 18px;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+
+		img {
+			display: block;
+			max-height: 300px;
+			width: 100%;
+			height: 100%;
+			object-fit: cover;
+		}
+
+		.slide-text {
+			margin-top: 1rem;
+			font-size: 1.2rem;
+			color: #fff;
+			position: absolute;
+		}
+	}
+
+	.swiper-button-prev,
+	.swiper-button-next {
+		color: #000;
+	}
+
+	.swiper-pagination-bullet {
+		background: #000;
+	}
+}
