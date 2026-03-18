@@ -38,6 +38,7 @@ function mytheme_enqueue_assets() {
 		true
 	);
 }
+
 add_action( 'wp_enqueue_scripts', 'mytheme_enqueue_assets' );
 
 /**
@@ -59,12 +60,14 @@ function mytheme_setup() {
 		'primary' => 'Primary Menu',
 	] );
 }
+
 add_action( 'after_setup_theme', 'mytheme_setup' );
 
 /**
  * Register custom page templates located in /templates directory.
  *
  * @param array $templates Existing page templates.
+ *
  * @return array Modified list of templates.
  */
 function mytheme_page_templates( $templates ) {
@@ -73,6 +76,7 @@ function mytheme_page_templates( $templates ) {
 
 	return $templates;
 }
+
 add_filter( 'theme_page_templates', 'mytheme_page_templates' );
 
 /**
@@ -81,6 +85,7 @@ add_filter( 'theme_page_templates', 'mytheme_page_templates' );
  * Overrides default template loading for pages if a custom template is selected.
  *
  * @param string $template Default template path.
+ *
  * @return string Modified template path.
  */
 function mytheme_load_template( $template ) {
@@ -94,6 +99,7 @@ function mytheme_load_template( $template ) {
 
 	return $template;
 }
+
 add_filter( 'template_include', 'mytheme_load_template' );
 
 /**
@@ -105,9 +111,10 @@ add_filter( 'template_include', 'mytheme_load_template' );
  * @return void
  */
 function mytheme_register_blocks() {
-	$blocks = ['hero', 'slider']; // add future blocks here
-	foreach ($blocks as $block) {
-		register_block_type(get_template_directory() . '/blocks/' . $block);
+	$blocks = [ 'hero', 'slider' ]; // add future blocks here
+	foreach ( $blocks as $block ) {
+		register_block_type( get_template_directory() . '/blocks/' . $block );
 	}
 }
-add_action('init', 'mytheme_register_blocks');
+
+add_action( 'init', 'mytheme_register_blocks' );
